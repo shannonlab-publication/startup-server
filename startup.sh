@@ -1,10 +1,7 @@
 #!/bin/sh
 
-ssh-keyscan github.com >> ~/.ssh/known_hosts
-
 #WorkingDirectory
 WORK_DIR=/usr/local/work
-EXIST_FILE=/var/tmp/.startup
 
 function passwd_root() {
   echo "管理者パスワードを変更してください。必ずメモしてください。忘れた場合は復旧できません。"
