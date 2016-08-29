@@ -8,3 +8,8 @@ sh startup.sh
 ```
 
 *rootパスワード、devパスワードは必ずメモしてください*
+
+## Port
+- SSH:19722
+- HTTP:80
+- Redis:6379
