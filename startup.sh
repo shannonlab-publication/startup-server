@@ -21,16 +21,24 @@ function chef_install() {
   cd $WORK_DIR
   wget https://packages.chef.io/stable/el/6/chef-12.12.15-1.el6.x86_64.rpm
   rpm -ivh chef-12.12.15-1.el6.x86_64.rpm
-  RESULT=`rpm -qa | grep chef`
-
-  if [ -n "$RESULT" ]; then
-    echo "CHEF INSTALL SUCCES"
-    mkdir /var/chef
-  fi
+  cd /var/chef/
+  git clone https://github.com/shannonlab-publication/cookbooks.git
+  chef-solo -o base
+  chef-solo -o Python-3.5.2
+  chef-solo -o httpd
+  chef-solo -o redis-2.8.17
+  chef-solo -o pip-modules
 
 }
 
+function clone_firstDjango() {
+
+  cd /var/www/
+  git clone https://github.com/shannonlab-publication/django.git
+
+}
 
 passwd_root
 adduser_develop
 chef_install
+clone_firstDjango
