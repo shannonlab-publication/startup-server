@@ -35,6 +35,7 @@ function clone_firstDjango() {
 
   cd /var/www/
   git clone https://github.com/shannonlab-publication/django.git
+  chown -R dev:dev /var/www/django
 
 }
 
