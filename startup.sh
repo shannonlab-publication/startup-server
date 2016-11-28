@@ -21,6 +21,7 @@ function chef_install() {
   cd $WORK_DIR
   wget https://packages.chef.io/stable/el/6/chef-12.12.15-1.el6.x86_64.rpm
   rpm -ivh chef-12.12.15-1.el6.x86_64.rpm
+  mkdir /var/chef
   cd /var/chef/
   git clone https://github.com/shannonlab-publication/cookbooks.git
   chef-solo -o base
